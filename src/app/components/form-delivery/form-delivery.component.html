@@ -1,55 +1,46 @@
-<div class="w-50 mt-2">
+<div class="w-75 mt-2 glass">
   <div class="row ml-0">
     <div class="col-md-12">
       <h4 class="mb-3">Create Delivery</h4>
-      <form class="needs-validation" novalidate="">
+      <form
+        [formGroup]="formRegisterDelivery"
+        (validSubmit)="onSubmit()"
+      >
         <div class="row">
           <div class="col-md-6 mb-3">
-            <label for="firstName">Name</label>
+            <label for="nameInput">Name</label>
             <input
               type="text"
               class="form-control"
-              name="firstName"
-              [(ngModel)]="name"
-              placeholder=""
-              value=""
-              required=""
+              name="nameInput"
+              formControlName="Name"
+              placeholder="Nicholas"
             />
-            <div class="invalid-feedback">Valid first name is required.</div>
+            <div class="invalid-feedback">Valid name is required.</div>
           </div>
-          <div class="col-md-3 mb-3">
-            <label for="lastName">Age</label>
+          <div class="col-md-6 mb-3">
+            <label for="ageInput">Age</label>
             <input
               type="number"
               class="form-control"
-              id="lastName"
-              placeholder=""
-              value=""
-              required=""
+              placeholder="25"
+              formControlName="Age"
+              name="ageInput"
             />
-            <div class="invalid-feedback">Valid last name is required.</div>
+            <div class="invalid-feedback">Valid age is required.</div>
           </div>
         </div>
         <div class="row">
           <div class="col-md-6 mb-3">
-            <label for="lastName">Quantity of products</label>
+            <label for="quantityInput">Quantity of products</label>
             <input
               type="number"
               class="form-control"
-              id="lastName"
-              placeholder=""
-              value=""
-              required=""
+              name="quantityInput"
+              placeholder="6"
+              formControlName="QuantityProd"
             />
-            <div class="invalid-feedback">Valid last name is required.</div>
-          </div>
-          <div class="col-md-6 mt-3 pt-3 custom-control custom-checkbox">
-            <input
-              type="checkbox"
-              class="custom-control-input"
-              id="same-address"
-            />
-            <label class="custom-control-label" for="same-address">Tips</label>
+            <div class="invalid-feedback">Valid quantity is required.</div>
           </div>
         </div>
         <div class="row">
@@ -59,8 +50,8 @@
               class="custom-select d-block w-100"
               [(ngModel)]="continentType"
               (ngModelChange)="onChange($event)"
+              [ngModelOptions]="{standalone: true}"
               name="country"
-              required=""
             >
               <option value="">Choose...</option>
               <option value="americas">America</option>
@@ -68,24 +59,28 @@
               <option value="africa">Africa</option>
               <option value="europe">Europe</option>
             </select>
-            <div class="invalid-feedback">Please select a valid country.</div>
           </div>
           <div class="col-md-6 mb-3">
-            <label for="firstName">Country</label>
+            <label for=countryInput>Country</label><br />
             <input
-              type="text"
-              class="form-control"
-              name="firstName"
-              [(ngModel)]="country"
-              disabled
-            />
-            <div class="invalid-feedback">Valid first name is required.</div>
+            type="text"
+            class="form-control"
+            placeholder="Select region first"
+            formControlName="Country"
+            name="countryInput"
+          />
+            <div class="invalid-feedback">The country is required.</div>
           </div>
+        </div>
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" [(ngModel)]='isTipsChecked' [ngModelOptions]="{standalone: true}" id="acceptTips">
+          <label class="custom-control-label" for="acceptTips">Can recived Tips?</label>
         </div>
 
         <hr class="mb-4" />
-        <button class="btn btn-primary btn-lg btn-block" type="submit">
-          Continue to checkout
+        <button class="btn btn-lg btn-block" type="submit">
+          <span *ngIf="isLoading" class="loadingMoto">🛵💨</span>
+          <span *ngIf="!isLoading">Add Delivery 🛵</span>
         </button>
       </form>
     </div>

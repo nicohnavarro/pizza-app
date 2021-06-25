@@ -1,3 +1,4 @@
+import { Country } from './../models/Country';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
@@ -9,6 +10,6 @@ export class CountriesService {
   constructor(private http: HttpClient) { }
  
   getCountries(region:string){
-    return this.http.get<any>(this.countries+region);
+    return this.http.get<Country>(this.countries+region);
   }
 }

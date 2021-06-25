@@ -1,3 +1,4 @@
+import { Country } from './../../models/Country';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class CreateDeliveryComponent implements OnInit {
 
   listCountries:any[]=[];
-  country:string='';
+  country:Country | undefined;
   constructor() { }
 
   ngOnInit(): void {
@@ -18,7 +19,7 @@ export class CreateDeliveryComponent implements OnInit {
     this.listCountries = countries
   }
 
-  setCountry(country:string){
+  setCountry(country:Country){
     this.country = country;
   }
 

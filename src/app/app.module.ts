@@ -21,6 +21,7 @@ import { ListCountriesComponent } from './components/list-countries/list-countri
 import { DetailsDeliveryComponent } from './pages/details-delivery/details-delivery.component';
 import { GetPizzasComponent } from './pages/get-pizzas/get-pizzas.component';
 import { GithubInfoComponent } from './components/github-info/github-info.component';
+import { NgBootstrapFormValidationModule } from 'ng-bootstrap-form-validation';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { GithubInfoComponent } from './components/github-info/github-info.compon
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
+    NgBootstrapFormValidationModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFirestoreModule,
