@@ -1,0 +1,93 @@
+<div class="w-50 mt-2">
+  <div class="row ml-0">
+    <div class="col-md-12">
+      <h4 class="mb-3">Create Delivery</h4>
+      <form class="needs-validation" novalidate="">
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="firstName">Name</label>
+            <input
+              type="text"
+              class="form-control"
+              name="firstName"
+              [(ngModel)]="name"
+              placeholder=""
+              value=""
+              required=""
+            />
+            <div class="invalid-feedback">Valid first name is required.</div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <label for="lastName">Age</label>
+            <input
+              type="number"
+              class="form-control"
+              id="lastName"
+              placeholder=""
+              value=""
+              required=""
+            />
+            <div class="invalid-feedback">Valid last name is required.</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="lastName">Quantity of products</label>
+            <input
+              type="number"
+              class="form-control"
+              id="lastName"
+              placeholder=""
+              value=""
+              required=""
+            />
+            <div class="invalid-feedback">Valid last name is required.</div>
+          </div>
+          <div class="col-md-6 mt-3 pt-3 custom-control custom-checkbox">
+            <input
+              type="checkbox"
+              class="custom-control-input"
+              id="same-address"
+            />
+            <label class="custom-control-label" for="same-address">Tips</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-5 mb-3">
+            <label for="country">Region</label>
+            <select
+              class="custom-select d-block w-100"
+              [(ngModel)]="continentType"
+              (ngModelChange)="onChange($event)"
+              name="country"
+              required=""
+            >
+              <option value="">Choose...</option>
+              <option value="americas">America</option>
+              <option value="oceania">Oceania</option>
+              <option value="africa">Africa</option>
+              <option value="europe">Europe</option>
+            </select>
+            <div class="invalid-feedback">Please select a valid country.</div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="firstName">Country</label>
+            <input
+              type="text"
+              class="form-control"
+              name="firstName"
+              [(ngModel)]="country"
+              disabled
+            />
+            <div class="invalid-feedback">Valid first name is required.</div>
+          </div>
+        </div>
+
+        <hr class="mb-4" />
+        <button class="btn btn-primary btn-lg btn-block" type="submit">
+          Continue to checkout
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

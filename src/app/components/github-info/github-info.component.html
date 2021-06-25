@@ -1,0 +1,14 @@
+<div class="container-fluid">
+  <div class="card" style="width: 18rem;margin: auto;margin-top: 10%;" *ngIf="!isLoading">
+    <img class="card-img-top" [src]="githubProfile.avatar" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{githubProfile.name}}</h5>
+      <p class="card-text-center">{{githubProfile.location}}</p>
+      <a class="btn btn-danger">{{githubProfile.followers}} followers</a>
+      <a class="btn btn-warning">{{githubProfile.following}} following</a>
+    </div>
+  </div>
+  <div class="card" style="width: 18rem;margin:auto;margin-top: 10%;" *ngIf="isLoading">
+    <img  src="../../../assets/images/loadingPizza.gif" alt="Card image cap">
+  </div>
+</div>

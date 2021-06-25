@@ -1,0 +1,36 @@
+<div class="text-center container">
+    
+  <form class="form-signin">
+    <img class="mb-4" src="../../../assets/images/pizza1.jpg" alt="" width="72" height="72">
+    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+    <label for="inputEmail" class="sr-only">Email address</label>
+    <input type="email" [(ngModel)]="email" name="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input type="password" [(ngModel)]="password" class="form-control" placeholder="Password" name="inputPassword" required="">
+    <div class="checkbox mb-3">
+      <select class="custom-select" [(ngModel)]="guestType" (ngModelChange)="onChange($event)"  name="guest">
+        <option value='0'>Choose...</option>
+        <option value="admin">Admin</option>
+        <option value="employee">Employee</option>
+      </select>
+    </div>
+    <button class="btn btn-lg btn-block" type="submit" (click)="login($event)"><span class="loading" *ngIf="isLoading">🍕   🍕   🍕</span><span *ngIf="!isLoading">Sign in</span></button>
+    <p class="mt-5 mb-3 text-muted">Labo 4</p>
+  </form>
+  
+  
+  <ul class="bg-bubbles">
+		<li></li>
+		<li></li>
+		<li></li> 
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+    
+  
+  </div>
