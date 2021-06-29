@@ -23,7 +23,7 @@ import { GetPizzasComponent } from './pages/get-pizzas/get-pizzas.component';
 import { GithubInfoComponent } from './components/github-info/github-info.component';
 import { NgBootstrapFormValidationModule } from 'ng-bootstrap-form-validation';
 import { ListDeliveriesComponent } from './components/list-deliveries/list-deliveries.component';
-import { SortableDirective } from './directives/sortable.directive';
+import { NgbdSortableHeader } from './directives/sortable.directive';
 
 @NgModule({
   declarations: [
@@ -39,7 +39,7 @@ import { SortableDirective } from './directives/sortable.directive';
     GetPizzasComponent,
     GithubInfoComponent,
     ListDeliveriesComponent,
-    SortableDirective
+    NgbdSortableHeader
   ],
   imports: [
     BrowserModule,

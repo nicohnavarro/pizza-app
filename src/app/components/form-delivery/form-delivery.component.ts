@@ -44,7 +44,7 @@ export class FormDeliveryComponent implements OnInit {
 
   onChange(event: string) {
     this.countrySvc.getCountries(event).subscribe((data) => {
-      let countries = data.map((country)=>{return {'name':country.name,'region':country.region,'flag':country.flag}})
+      let countries = data.map((country)=>{return {'name':country.name,'region':country.region,'flag':country.flag,'area':country.area,'population':country.population}})
       this.selectedRegion.emit(countries);
     })
   }
