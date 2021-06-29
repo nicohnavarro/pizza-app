@@ -1,5 +1,5 @@
 export interface Country{
   name:string;
-  avatar_url:string;
+  region:string;
   flag:string;
 }

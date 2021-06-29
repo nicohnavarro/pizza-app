@@ -10,6 +10,6 @@ export class CountriesService {
   constructor(private http: HttpClient) { }
  
   getCountries(region:string){
-    return this.http.get<Country>(this.countries+region);
+    return this.http.get<Country[]>(this.countries+region);
   }
 }

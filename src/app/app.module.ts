@@ -22,6 +22,8 @@ import { DetailsDeliveryComponent } from './pages/details-delivery/details-deliv
 import { GetPizzasComponent } from './pages/get-pizzas/get-pizzas.component';
 import { GithubInfoComponent } from './components/github-info/github-info.component';
 import { NgBootstrapFormValidationModule } from 'ng-bootstrap-form-validation';
+import { ListDeliveriesComponent } from './components/list-deliveries/list-deliveries.component';
+import { SortableDirective } from './directives/sortable.directive';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { NgBootstrapFormValidationModule } from 'ng-bootstrap-form-validation';
     ListCountriesComponent,
     DetailsDeliveryComponent,
     GetPizzasComponent,
-    GithubInfoComponent
+    GithubInfoComponent,
+    ListDeliveriesComponent,
+    SortableDirective
   ],
   imports: [
     BrowserModule,

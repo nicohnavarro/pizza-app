@@ -1,3 +1,5 @@
+import { DeliveryService } from './../../services/delivery.service';
+import { Delivery } from './../../models/Delivery';
 import { Country } from './../../models/Country';
 import { CountriesService } from './../../services/countries.service';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
@@ -17,43 +19,49 @@ export class FormDeliveryComponent implements OnInit {
   ageFormCtrl: FormControl;
   quantityFormCtrl: FormControl;
   countryFormCtrl: FormControl;
-  tipsFormCtrl: FormControl;
   isTipsChecked: boolean = false;
   isLoading: boolean = false;
-  @Output() selectedRegion: EventEmitter<any> = new EventEmitter();
+  @Output() selectedRegion: EventEmitter<Country[]> = new EventEmitter();
+  @Output() successfullyAdded: EventEmitter<boolean> = new EventEmitter();
 
-  constructor(private countrySvc: CountriesService) {
+  constructor(private countrySvc: CountriesService,private deliverySvc:DeliveryService) {
     this.nameFormCtrl = new FormControl('', [Validators.required, Validators.pattern(/^[a-zA-Z]*$/),]);
-    this.ageFormCtrl = new FormControl('', [Validators.required]);
-    this.quantityFormCtrl = new FormControl('', [Validators.required]);
+    this.ageFormCtrl = new FormControl('', [Validators.required,Validators.max(65),Validators.min(18)]);
+    this.quantityFormCtrl = new FormControl('', [Validators.required,Validators.max(25),Validators.min(1)]);
     this.countryFormCtrl = new FormControl('', [Validators.required]);
-    this.tipsFormCtrl = new FormControl(true);
     this.formRegisterDelivery.addControl('Name', this.nameFormCtrl);
     this.formRegisterDelivery.addControl('Age', this.ageFormCtrl);
     this.formRegisterDelivery.addControl('QuantityProd', this.quantityFormCtrl);
     this.formRegisterDelivery.addControl('Country', this.countryFormCtrl);
-    this.formRegisterDelivery.addControl('Tips', this.tipsFormCtrl);
-
   }
 
   ngOnInit(): void {
   }
 
   ngOnChanges(change: any) {
-    console.log(change)
     this.countryFormCtrl.setValue(this.country?.name)
   }
 
   onChange(event: string) {
     this.countrySvc.getCountries(event).subscribe((data) => {
-      this.selectedRegion.emit(data);
+      let countries = data.map((country)=>{return {'name':country.name,'region':country.region,'flag':country.flag}})
+      this.selectedRegion.emit(countries);
     })
   }
 
   onSubmit() {
     this.isLoading = true;
-    setTimeout(() => {
-      this.isLoading = false;
-    }, 3000);
+    let delivery = {
+      name:this.nameFormCtrl.value,
+      age:this.ageFormCtrl.value,
+      carryQuantity:this.quantityFormCtrl.value,
+      country:this.country,
+      canRecivedTips:this.isTipsChecked
+    } as Delivery;
+    this.deliverySvc.addDelivery(delivery).then(()=>{
+      this.successfullyAdded.emit(true);
+      this.isLoading=false;
+    });
   }
+
 }

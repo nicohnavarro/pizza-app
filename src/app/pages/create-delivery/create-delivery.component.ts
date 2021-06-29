@@ -1,5 +1,6 @@
 import { Country } from './../../models/Country';
 import { Component, OnInit } from '@angular/core';
+import { Notyf } from 'notyf';
 
 @Component({
   selector: 'app-create-delivery',
@@ -10,6 +11,7 @@ export class CreateDeliveryComponent implements OnInit {
 
   listCountries:any[]=[];
   country:Country | undefined;
+  notyf = new Notyf();
   constructor() { }
 
   ngOnInit(): void {
@@ -21,6 +23,12 @@ export class CreateDeliveryComponent implements OnInit {
 
   setCountry(country:Country){
     this.country = country;
+  }
+
+  deliveryAdded(isAdded:boolean){
+    isAdded ? 
+    this.notyf.success('Your changes have been successfully saved!') : 
+    this.notyf.error('You must fill out the form before moving forward');
   }
 
 }

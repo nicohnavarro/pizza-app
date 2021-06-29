@@ -35,7 +35,6 @@ export class LoginComponent implements OnInit {
     event.preventDefault();
     this.isLoading = true;
     this.authSvc.login(this.email,this.password).then(data=>{
-      console.log(data);
       this.isLoading = false;
       this.router.navigate([''])
     })
