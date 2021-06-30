@@ -9,9 +9,15 @@
   padding:2rem;
   margin: auto;
   margin-top: 2rem;
+  animation: fadeIn 2.5s;
 }
 
 .card{
   border:none;
   background-color: transparent;
+}
+
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
 }

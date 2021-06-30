@@ -1,6 +1,7 @@
 import { AuthService } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Notyf } from 'notyf';
 
 @Component({
   selector: 'app-login',
@@ -13,6 +14,7 @@ export class LoginComponent implements OnInit {
   password:string='';
   guestType:string='0';
   isLoading:boolean=false;
+  notyf:Notyf = new Notyf();
 
   constructor(private authSvc:AuthService,private router:Router) { }
 
@@ -37,6 +39,9 @@ export class LoginComponent implements OnInit {
     this.authSvc.login(this.email,this.password).then(data=>{
       this.isLoading = false;
       this.router.navigate([''])
+    }).catch((err)=>{
+      this.isLoading = false;
+      this.notyf.error("Sorry we can't log you 🛂");
     })
 
     

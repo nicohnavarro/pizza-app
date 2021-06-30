@@ -5,16 +5,16 @@
   </button>
   <div [ngbCollapse]="isNavbarCollapsed" class="collapse navbar-collapse" id="navbarsDefault">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item dropdown" ngbDropdown>
+      <!-- <li class="nav-item dropdown" ngbDropdown>
         <a class="nav-link dropdown-toggle" id="id01" ngbDropdownToggle>Welcome</a>
         <div class="dropdown-menu" aria-labelledby="id01" ngbDropdownMenu>
           <a class="dropdown-item" href="#">HTML</a>
           <a class="dropdown-item" href="#">TS</a>
           <a class="dropdown-item" href="#">JS</a>
         </div>
-      </li>
+      </li> -->
       <li class="nav-item">
-        <a class="nav-link" routerLink='login' >Login</a>
+        <a class="nav-link" routerLink='' >Welcome</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLink='createDelivery' >Create Delivery</a>
@@ -22,6 +22,10 @@
       <li class="nav-item">
         <a class="nav-link" routerLink='detailsDelivery' >Details Delivery</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink='getPizzas' >Get Pizzas 🍕</a>
+      </li>
     </ul>
+    <button class="btn btn-light my-2 my-sm-0" routerLink='login'>Login</button>
   </div>
 </nav>
