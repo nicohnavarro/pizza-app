@@ -1,12 +1,8 @@
-import { Delivery } from './../../models/Delivery';
-import { DeliveryService } from './../../services/delivery.service';
-import {
-  NgbdSortableHeader,
-  SortEvent,
-} from './../../directives/sortable.directive';
+import { DeliveryService } from './../../../services/delivery.service';
+import { NgbdSortableHeader } from './../../../directives/sortable.directive';
+import { Delivery } from './../../../models/Delivery';
 import { Observable } from 'rxjs';
-import { Country } from './../../models/Country';
-import { Component, OnInit, QueryList, ViewChildren } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, QueryList, ViewChildren } from '@angular/core';
 import { CountriesService } from 'src/app/services/countries.service';
 
 @Component({
@@ -15,8 +11,8 @@ import { CountriesService } from 'src/app/services/countries.service';
   styleUrls: ['./list-deliveries.component.scss'],
 })
 export class ListDeliveriesComponent implements OnInit {
-  @Output() deliverySelected: EventEmmiter<Delivery> =
-    new EventEmmiter<Delivery>();
+  @Output() deliverySelected: EventEmitter<Delivery> =
+    new EventEmitter<Delivery>();
   deliveries: Delivery[] = [];
 
   @ViewChildren(NgbdSortableHeader) headers:
@@ -33,6 +29,6 @@ export class ListDeliveriesComponent implements OnInit {
   onSort(event: any) {}
 
   selectDelivery(delivery: Delivery) {
-    s;
+    this.deliverySelected.emit(delivery);
   }
 }

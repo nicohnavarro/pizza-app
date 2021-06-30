@@ -1,3 +1,9 @@
+import { NgbdSortableHeader } from './directives/sortable.directive';
+import { CountryInfoComponent } from './components/country/country-info/country-info.component';
+import { DeliveryInfoComponent } from './components/delivery/delivery-info/delivery-info.component';
+import { ListDeliveriesComponent } from './components/delivery/list-deliveries/list-deliveries.component';
+import { ListCountriesComponent } from './components/country/list-countries/list-countries.component';
+import { FormDeliveryComponent } from './components/delivery/form-delivery/form-delivery.component';
 import { environment } from './../environments/environment';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -16,16 +22,10 @@ import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { CreateDeliveryComponent } from './pages/create-delivery/create-delivery.component';
-import { FormDeliveryComponent } from './components/form-delivery/form-delivery.component';
-import { ListCountriesComponent } from './components/list-countries/list-countries.component';
 import { DetailsDeliveryComponent } from './pages/details-delivery/details-delivery.component';
 import { GetPizzasComponent } from './pages/get-pizzas/get-pizzas.component';
 import { GithubInfoComponent } from './components/github-info/github-info.component';
 import { NgBootstrapFormValidationModule } from 'ng-bootstrap-form-validation';
-import { ListDeliveriesComponent } from './components/list-deliveries/list-deliveries.component';
-import { NgbdSortableHeader } from './directives/sortable.directive';
-import { DeliveryInfoComponent } from './components/delivery-info/delivery-info.component';
-import { CountryInfoComponent } from './components/country-info/country-info.component';
 
 @NgModule({
   declarations: [

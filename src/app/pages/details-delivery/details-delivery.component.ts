@@ -1,3 +1,4 @@
+import { Delivery } from './../../models/Delivery';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailsDeliveryComponent implements OnInit {
 
-  constructor() { }
+  selectedDelivery:Delivery | undefined;
+  constructor() { 
+  }
 
   ngOnInit(): void {
   }
 
+  getSelectedDelivery(delivery:Delivery){this.selectedDelivery = delivery;}
 }

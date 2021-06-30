@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Delivery } from './../../../models/Delivery';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-delivery-info',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DeliveryInfoComponent implements OnInit {
 
+  @Input() delivery:Delivery | undefined;
   constructor() { }
 
   ngOnInit(): void {

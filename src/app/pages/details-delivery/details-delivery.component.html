@@ -1,1 +1,9 @@
-<app-list-deliveries></app-list-deliveries>
+<div class="row m-auto">
+  <div class="col-md-8">
+    <app-list-deliveries (deliverySelected)="getSelectedDelivery($event)"></app-list-deliveries>
+  </div>
+  <div class="col-md-4 mr-auto">
+    <app-delivery-info [delivery]="selectedDelivery"></app-delivery-info>
+    <app-delivery-info [delivery]="selectedDelivery"></app-delivery-info>
+  </div>
+</div>
