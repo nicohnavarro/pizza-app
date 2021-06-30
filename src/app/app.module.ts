@@ -26,6 +26,10 @@ import { DetailsDeliveryComponent } from './pages/details-delivery/details-deliv
 import { GetPizzasComponent } from './pages/get-pizzas/get-pizzas.component';
 import { GithubInfoComponent } from './components/github-info/github-info.component';
 import { NgBootstrapFormValidationModule } from 'ng-bootstrap-form-validation';
+import { CreatePizzaComponent } from './components/pizza/create-pizza/create-pizza.component';
+import { ListPizzasComponent } from './components/pizza/list-pizzas/list-pizzas.component';
+import { UpdatePizzaComponent } from './components/pizza/update-pizza/update-pizza.component';
+import { DeletePizzaComponent } from './components/pizza/delete-pizza/delete-pizza.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +47,11 @@ import { NgBootstrapFormValidationModule } from 'ng-bootstrap-form-validation';
     ListDeliveriesComponent,
     NgbdSortableHeader,
     DeliveryInfoComponent,
-    CountryInfoComponent
+    CountryInfoComponent,
+    CreatePizzaComponent,
+    ListPizzasComponent,
+    UpdatePizzaComponent,
+    DeletePizzaComponent
   ],
   imports: [
     BrowserModule,
