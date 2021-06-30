@@ -1,1 +1,69 @@
-<p>create-pizza works!</p>
+<div class="w-50 mt-2 glass">
+  <div class="row">
+    <div class="col-md-12">
+      <h4 class="mb-3">Create Pizza</h4>
+      <form [formGroup]="formRegisterPizza" (validSubmit)="onSubmit()">
+        <div class="row">
+          <div class="col-md-12">
+            <label for="nameInput">Name</label>
+            <input
+              type="text"
+              class="form-control"
+              name="nameInput"
+              formControlName="Name"
+              placeholder="Napoli"
+            />
+            <div class="invalid-feedback">Valid name is required.</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <label for="priceInput">Price</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroupPrepend">$</span>
+              </div>
+              <input
+                type="number"
+                class="form-control"
+                placeholder="10"
+                formControlName="Price"
+                name="priceInput"
+              />
+              <div class="invalid-feedback">Valid price is required</div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <label for="weightInput">Weight</label>
+            <input
+              type="number"
+              class="form-control"
+              name="weightInput"
+              placeholder="500 gr"
+              formControlName="Weight"
+            />
+            <div class="invalid-feedback">Valid weight is required.</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <label for="ingredientsTextArea">Ingredients</label>
+            <textarea
+              class="form-control"
+              name="ingredientsTextArea"
+              formControlName="Ingredients"
+              row="5"
+            ></textarea>
+          </div>
+        </div>
+        <hr class="mb-2" />
+        <button class="btn btn-lg btn-block" type="submit">
+          <span *ngIf="isLoading">Adding Pizza</span>
+          <span *ngIf="!isLoading">Add Pizza</span>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
