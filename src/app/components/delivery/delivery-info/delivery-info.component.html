@@ -1,5 +1,13 @@
 <div class="glass" *ngIf="delivery">
   <div class="card">
-    <p>{{delivery.name}}</p>
+    <div class="card-body">
+      <h5 class="card-title"><b>Name:</b> {{delivery.name}}</h5>
+      <p class="card-text"><b>Age:</b> {{delivery.age}}</p>
+      <button type="button" class="btn btn-success">
+        Quantity to go <span class="badge badge-light">{{delivery.carryQuantity}}</span>
+      </button>
+    </div>
+    <span *ngIf="delivery.canRecivedTips" class="badge badge-primary">Can recived Tips</span>
+    <span *ngIf="!delivery.canRecivedTips" class="badge badge-danger">Not recived Tips</span>
   </div>
 </div>

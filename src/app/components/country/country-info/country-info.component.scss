@@ -1,0 +1,19 @@
+.glass{
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(166, 72, 29, 0.37);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  z-index: 100;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding:2rem;
+  margin: auto;
+  margin-top: 2rem;
+}
+
+.card{
+  border:none;
+  img{
+    width: 3rem;
+  }
+}

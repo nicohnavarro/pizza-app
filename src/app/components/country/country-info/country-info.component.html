@@ -1,1 +1,14 @@
-<p>country-info works!</p>
+<div class="glass" *ngIf="country">
+  <div class="card">
+    <div class="card-body">
+      <div class="flex-row">
+        <img [src]="country.flag" alt="">
+        <h5 class="card-title"><b>{{country.name}}</b></h5>
+      </div>
+      <p class="card-text"><b>Region:</b> {{country.region}}</p>
+      <button type="button" class="btn btn-info">
+        Population <span class="badge badge-light">{{country.population}}</span>
+      </button>
+    </div>
+  </div>
+</div>
