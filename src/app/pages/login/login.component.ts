@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
     this.isLoading = true;
     this.authSvc.login(this.email,this.password).then(data=>{
       this.isLoading = false;
-      this.router.navigate([''])
+      this.router.navigate(['/welcome'])
     }).catch((err)=>{
       this.isLoading = false;
       this.notyf.error("Sorry we can't log you 🛂");

@@ -27,8 +27,8 @@ export class CreateDeliveryComponent implements OnInit {
 
   deliveryAdded(isAdded:boolean){
     isAdded ? 
-    this.notyf.success('Your changes have been successfully saved!') : 
-    this.notyf.error('You must fill out the form before moving forward');
+    this.notyf.success('Delivery added') : 
+    this.notyf.error('We can not add Delivery');
   }
 
 }

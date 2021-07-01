@@ -9,7 +9,7 @@ import { GithubInfoComponent } from './components/github-info/github-info.compon
 
 const routes: Routes = [
   {path:'', component: WelcomeComponent ,children:[
-    {path:'', component: GithubInfoComponent },
+    {path:'welcome', component: GithubInfoComponent },
     {path:'createDelivery', component: CreateDeliveryComponent },
     {path:'detailsDelivery', component: DetailsDeliveryComponent },
     {path:'getPizzas', component: GetPizzasComponent },
