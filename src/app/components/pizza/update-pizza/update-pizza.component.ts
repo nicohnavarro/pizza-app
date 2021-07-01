@@ -11,6 +11,7 @@ import { pizzaState } from 'src/app/enums/pizzaState';
 })
 export class UpdatePizzaComponent implements OnInit {
   @Output()successfullyEdited:EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Output() close: EventEmitter<void> = new EventEmitter<void>();
   @Input()pizzaToEdit:Pizza | undefined;
   formRegisterPizza: FormGroup = new FormGroup({});
   nameFormCtrl: FormControl;

@@ -9,6 +9,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class DeletePizzaComponent implements OnInit {
   @Output() successfullyDeleted: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Output() close: EventEmitter<void> = new EventEmitter<void>();
   @Input()
   pizzaToDelete: Pizza | undefined;
   isLoading: boolean = false;

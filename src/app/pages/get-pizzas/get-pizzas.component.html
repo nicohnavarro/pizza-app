@@ -3,10 +3,10 @@
     <app-create-pizza (successfullyCreated)="createdPizza($event)"></app-create-pizza>
   </div>
   <div class="col-md-2" *ngIf="editPizza">
-    <app-update-pizza (successfullyEdited)="editedPizza($event)" [pizzaToEdit]="editPizza"></app-update-pizza>
+    <app-update-pizza (successfullyEdited)="editedPizza($event)" (close)="editPizza = undefined" [pizzaToEdit]="editPizza"></app-update-pizza>
   </div>
   <div class="col-md-2" *ngIf="deletePizza">
-    <app-delete-pizza (successfullyDeleted)="deletedPizza($event)" [pizzaToDelete]="deletePizza"></app-delete-pizza>
+    <app-delete-pizza (successfullyDeleted)="deletedPizza($event)" (close)="deletePizza = undefined" [pizzaToDelete]="deletePizza"></app-delete-pizza>
   </div>
   <div class="col-md-6">
     <app-list-pizzas (pizzaSelectedEdit)="getSelectedPizzaToEdit($event)" (pizzaSelectedDelete)="getSelectedPizzaToDelete($event)"></app-list-pizzas>

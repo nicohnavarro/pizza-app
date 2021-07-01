@@ -1,6 +1,7 @@
 <div class="w-100 glass" *ngIf="pizzaToDelete">
   <div class="row">
     <div class="col-md-12">
+      <span class="close" (click)="close.emit()">❎</span>
       <h4 class="mb-3">Delete Pizza</h4>
         <div class="row">
           <div class="col-md-12">
