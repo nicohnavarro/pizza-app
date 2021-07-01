@@ -1,0 +1,44 @@
+.glass{
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(166, 72, 29, 0.37);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  z-index: 100;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding:1rem;
+  margin:auto;
+  margin-top: 2rem;
+}
+
+.btn{
+  // background-color: #f1521a;
+  background-color: orange;
+}
+
+.validField{
+  font-size: small;
+  color:red;
+}
+
+.loadingMoto{
+  -webkit-animation: moveIn 2s ease-in;
+  -moz-animation: moveIn 2s ease-in;
+  animation: moveIn 2s ease-in;
+}
+
+
+@-webkit-keyframes moveIn {
+  0% { margin-right: -100%; }
+  100% { margin-right: 90%; }
+}
+
+@-moz-keyframes moveIn {
+  0% { margin-right: -100%; }
+  100% { margin-right: 90%; }
+}
+
+@keyframes moveIn {
+  0% { margin-right: -100%; }
+  100% { margin-right: 90%; }
+}

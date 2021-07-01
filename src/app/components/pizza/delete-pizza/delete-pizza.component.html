@@ -1,1 +1,19 @@
-<p>delete-pizza works!</p>
+<div class="w-100 glass" *ngIf="pizzaToDelete">
+  <div class="row">
+    <div class="col-md-12">
+      <h4 class="mb-3">Delete Pizza</h4>
+        <div class="row">
+          <div class="col-md-12">
+            <span>
+              Are you sure you want to delete <b>{{pizzaToDelete.name}}</b>
+            </span>
+          </div>
+        </div>
+        <hr class="mb-2" />
+        <button class="btn btn-lg btn-block btn-danger" type="submit">
+          <span *ngIf="isLoading" >Deleting</span>
+          <span *ngIf="!isLoading"(click)="deletePizza()">Delete Pizza</span>
+        </button>
+    </div>
+  </div>
+</div>

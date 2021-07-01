@@ -1,1 +1,66 @@
-<p>update-pizza works!</p>
+<div class="w-100 glass" *ngIf="pizzaToEdit">
+  <div class="row">
+    <div class="col-md-12">
+      <h4 class="mb-3">Update Pizza</h4>
+      <form [formGroup]="formRegisterPizza" (validSubmit)="onSubmit()">
+        <div class="row">
+          <div class="col-md-12">
+            <label for="nameInput">Name</label>
+            <input
+              type="text"
+              readonly
+              class="form-control"
+              name="nameInput"
+              formControlName="Name"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <label for="priceInput">Price</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroupPrepend">$</span>
+              </div>
+              <input
+                type="number"
+                class="form-control"
+                formControlName="Price"
+                name="priceInput"
+              />
+              <div class="invalid-feedback">Valid price is required</div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <label for="weightInput">Weight</label>
+            <input
+              type="number"
+              class="form-control"
+              name="weightInput"
+              formControlName="Weight"
+            />
+            <div class="invalid-feedback">Valid weight is required.</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <label for="ingredientsTextArea">Ingredients</label>
+            <textarea
+              class="form-control"
+              name="ingredientsTextArea"
+              formControlName="Ingredients"
+              row="3"
+            ></textarea>
+          </div>
+        </div>
+        <hr class="mb-2" />
+        <button class="btn btn-lg btn-block" type="submit">
+          <span *ngIf="isLoading">Updating Pizza</span>
+          <span *ngIf="!isLoading">Update Pizza</span>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

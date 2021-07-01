@@ -3,4 +3,5 @@ export enum pizzaState {
   ORDERED,
   CANCELLED,
   CREATED,
+  EDITED
 }

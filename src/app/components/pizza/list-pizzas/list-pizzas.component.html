@@ -1,1 +1,49 @@
-<p>list-pizzas works!</p>
+<form class="glass" *ngIf="pizzas.length > 0">
+  <!-- <div class="form-group form-inline">
+    Full text search:
+    <input class="form-control ml-2" type="text" name="searchTerm" />
+  </div> -->
+
+  <table class="table">
+    <thead class="">
+      <tr>
+        <!-- <th scope="col">#</th> -->
+        <th scope="col" sortable="name" (sort)="onSort($event)">🍕</th>
+        <th scope="col" sortable="name" (sort)="onSort($event)">💲</th>
+        <th scope="col" sortable="name" (sort)="onSort($event)">📦</th>
+        <th scope="col" >🟦</th>
+        <th scope="col" >🟥</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pizza of pizzas">
+        <!-- <th scope="row">{{ pizza.name }}</th> -->
+        <td>
+          <ngb-highlight [result]="pizza.name"></ngb-highlight>
+        </td>
+        <td>
+          <ngb-highlight [result]="pizza.price | number"></ngb-highlight>
+        </td>
+        <td>
+          <ngb-highlight [result]="pizza.weight | number"></ngb-highlight>
+        </td>
+        <td>
+          <ngb-highlight result="✏️" (click)="editPizza(pizza)" class="touchable" title="Edit"></ngb-highlight>
+        </td>
+        <td>
+          <ngb-highlight result="❌" (click)="deletePizza(pizza)" class="touchable" title="Delete"></ngb-highlight>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="d-flex justify-content-between p-2">
+    <ngb-pagination> </ngb-pagination>
+
+    <select class="custom-select" style="width: auto" name="pageSize">
+      <option [ngValue]="2">2 items per page</option>
+      <option [ngValue]="4">4 items per page</option>
+      <option [ngValue]="6">6 items per page</option>
+    </select>
+  </div>
+</form>

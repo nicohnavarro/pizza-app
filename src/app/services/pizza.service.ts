@@ -17,12 +17,12 @@ export class PizzaService {
     return this.db.collection<Pizza>('pizzas').add(pizza);
   }
 
-  updatePizza(pizza: Pizza, id: string): Promise<void> {
+  updatePizza(pizza: Pizza, id: string | undefined): Promise<void> {
     return this.db.collection<Pizza>('pizzas').doc(id).set(pizza);
   }
 
-  deletePizza(pizza: Pizza, id: string): Promise<void> {
-    pizza.state = pizzaState.DELETED;
-    return this.db.collection<Pizza>('pizzas').doc(id).set(pizza);
-  }
+  deletePizza(pizza: Pizza, id: string | undefined): Promise<void> {
+      pizza.state = pizzaState.DELETED;
+      return this.db.collection<Pizza>('pizzas').doc(id).set(pizza);
+    }
 }
