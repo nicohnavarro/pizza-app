@@ -1,3 +1,4 @@
+import { User } from './../models/User';
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { first } from 'rxjs/operators';
@@ -6,14 +7,16 @@ import { first } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthService {
-  public user:any;
+  user:User = {email:'', id:''};
 
-  constructor(public afAuth: AngularFireAuth) { }
+  constructor(public afAuth: AngularFireAuth) { 
+  }
 
   async login(email: string, password: string) {
     try {
       const result = await this.afAuth.signInWithEmailAndPassword(email, password);
-      this.user = {'email':result.user?.email,'id':result.user?.uid};
+      this.user.email = result.user?.email;
+      this.user.id = result.user?.uid;
       return result.user;
     }
     catch (err) {
@@ -24,14 +27,15 @@ export class AuthService {
   async register(email: string, password: string) {
     const result = await this.afAuth.createUserWithEmailAndPassword(email, password).catch(err => { throw err });
     this.sendResgistrationMail();
-    this.user = result.user;
+    this.user.email = result.user?.email;
+    this.user.id = result.user?.uid;
     return result;
   }
 
   async logOut() {
     try {
       await this.afAuth.signOut();
-      this.user = null;
+      this.user ={email:'', id:''};
     }
     catch (err) {
       throw err;

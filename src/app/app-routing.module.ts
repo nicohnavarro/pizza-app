@@ -4,15 +4,17 @@ import { CreateDeliveryComponent } from './pages/create-delivery/create-delivery
 import { LoginComponent } from './pages/login/login.component';
 import { WelcomeComponent } from './pages/welcome/welcome.component';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, CanActivate } from '@angular/router';
 import { GithubInfoComponent } from './components/github-info/github-info.component';
+import { AuthGuard } from './guards/auth.guard';
+import { AdminGuard } from './guards/admin.guard';
 
 const routes: Routes = [
   {path:'', component: WelcomeComponent ,children:[
     {path:'welcome', component: GithubInfoComponent },
-    {path:'createDelivery', component: CreateDeliveryComponent },
-    {path:'detailsDelivery', component: DetailsDeliveryComponent },
-    {path:'getPizzas', component: GetPizzasComponent },
+    {path:'createDelivery', component: CreateDeliveryComponent , canActivate:[AuthGuard]},
+    {path:'detailsDelivery', component: DetailsDeliveryComponent ,canActivate:[AuthGuard]},
+    {path:'getPizzas', component: GetPizzasComponent ,canActivate:[AdminGuard]},
   ]},
   {path:'login', component: LoginComponent },
 ];
