@@ -12,8 +12,8 @@
   -webkit-animation: swing-in-top-fwd 2.5s
     cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
   animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
-  overflow: auto;
-  height: 500px;
+  overflow-y: auto;
+  height: 550px;
 }
 
 tbody tr:hover {

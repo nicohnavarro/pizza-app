@@ -13,7 +13,7 @@ export class AuthService {
   async login(email: string, password: string) {
     try {
       const result = await this.afAuth.signInWithEmailAndPassword(email, password);
-      this.user = result.user;
+      this.user = {'email':result.user?.email,'id':result.user?.uid};
       return result.user;
     }
     catch (err) {

@@ -26,6 +26,8 @@
         <a class="nav-link" routerLink='getPizzas' routerLinkActive="active">Get Pizzas 🍕</a>
       </li>
     </ul>
-    <button class="btn btn-light my-2 my-sm-0" routerLink='login' routerLinkActive="active">Login</button>
+    <span class="mr-3" *ngIf="user">🧔{{user.email}}</span>
+    <button class="btn btn-light my-2 my-sm-0" routerLink='login' routerLinkActive="active" *ngIf="!user">Login</button>
+    <button class="btn btn-light my-2 my-sm-0" (click)="logout()" *ngIf="user">Logout</button>
   </div>
 </nav>
