@@ -30,6 +30,7 @@ import { CreatePizzaComponent } from './components/pizza/create-pizza/create-piz
 import { ListPizzasComponent } from './components/pizza/list-pizzas/list-pizzas.component';
 import { UpdatePizzaComponent } from './components/pizza/update-pizza/update-pizza.component';
 import { DeletePizzaComponent } from './components/pizza/delete-pizza/delete-pizza.component';
+import { GetDeliveryComponent } from './pages/get-delivery/get-delivery.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { DeletePizzaComponent } from './components/pizza/delete-pizza/delete-piz
     CreatePizzaComponent,
     ListPizzasComponent,
     UpdatePizzaComponent,
-    DeletePizzaComponent
+    DeletePizzaComponent,
+    GetDeliveryComponent
   ],
   imports: [
     BrowserModule,

@@ -25,6 +25,9 @@
       <li class="nav-item">
         <a class="nav-link" routerLink='getPizzas' routerLinkActive="active" *ngIf="user.email === 'admin@pizza.com'">Get Pizzas 🍕</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink='getDelivery' routerLinkActive="active">Get Delivery 🛵</a>
+      </li>
     </ul>
     <span class="mr-3" *ngIf="user.email">🧔{{user.email}}</span>
     <button class="btn btn-light my-2 my-sm-0" routerLink='login' routerLinkActive="active" *ngIf="!user.email">Login</button>

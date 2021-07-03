@@ -1,3 +1,4 @@
+import { GetDeliveryComponent } from './pages/get-delivery/get-delivery.component';
 import { GetPizzasComponent } from './pages/get-pizzas/get-pizzas.component';
 import { DetailsDeliveryComponent } from './pages/details-delivery/details-delivery.component';
 import { CreateDeliveryComponent } from './pages/create-delivery/create-delivery.component';
@@ -16,6 +17,7 @@ const routes: Routes = [
     {path:'createDelivery', component: CreateDeliveryComponent , canActivate:[AuthGuard]},
     {path:'detailsDelivery', component: DetailsDeliveryComponent ,canActivate:[AuthGuard]},
     {path:'getPizzas', component: GetPizzasComponent ,canActivate:[AdminGuard]},
+    {path:'getDelivery', component: GetDeliveryComponent ,canActivate:[AuthGuard]},
   ]},
   {path:'login', component: LoginComponent },
 ];
