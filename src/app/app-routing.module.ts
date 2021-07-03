@@ -11,6 +11,7 @@ import { AdminGuard } from './guards/admin.guard';
 
 const routes: Routes = [
   {path:'', component: WelcomeComponent ,children:[
+    {path:'', component: GithubInfoComponent },
     {path:'welcome', component: GithubInfoComponent },
     {path:'createDelivery', component: CreateDeliveryComponent , canActivate:[AuthGuard]},
     {path:'detailsDelivery', component: DetailsDeliveryComponent ,canActivate:[AuthGuard]},
