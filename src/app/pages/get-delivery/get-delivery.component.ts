@@ -1,3 +1,5 @@
+import { Pizza } from './../../models/Pizza';
+import { Delivery } from './../../models/Delivery';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -10,6 +12,15 @@ export class GetDeliveryComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+  
+
+  addDelivery(delivery:Delivery){
+
+  }
+
+  addPizza(pizza:Pizza){
+
   }
 
 }

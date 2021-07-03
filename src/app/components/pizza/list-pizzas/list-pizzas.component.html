@@ -11,8 +11,9 @@
         <th scope="col" sortable="name" (sort)="onSort($event)">🍕</th>
         <th scope="col" sortable="name" (sort)="onSort($event)">💲</th>
         <th scope="col" sortable="name" (sort)="onSort($event)">📦</th>
-        <th scope="col" >🟦</th>
-        <th scope="col" >🟥</th>
+        <th scope="col" *ngIf="!isForOrder" >🟦</th>
+        <th scope="col" *ngIf="!isForOrder" >🟥</th>
+        <th scope="col" *ngIf="isForOrder" >🟧</th>
       </tr>
     </thead>
     <tbody>
@@ -27,11 +28,14 @@
         <td>
           <ngb-highlight [result]="pizza.weight | number"></ngb-highlight>
         </td>
-        <td>
+        <td *ngIf="!isForOrder">
           <ngb-highlight result="✏️" (click)="editPizza(pizza)" class="touchable" title="Edit"></ngb-highlight>
         </td>
-        <td>
+        <td *ngIf="!isForOrder">
           <ngb-highlight result="❌" (click)="deletePizza(pizza)" class="touchable" title="Delete"></ngb-highlight>
+        </td>
+        <td *ngIf="isForOrder">
+          <ngb-highlight result="🛵" (click)="addPizzaToOrder(pizza)" class="touchable" title="Add to Order"></ngb-highlight>
         </td>
       </tr>
     </tbody>
