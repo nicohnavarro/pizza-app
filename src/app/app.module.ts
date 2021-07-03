@@ -31,6 +31,7 @@ import { ListPizzasComponent } from './components/pizza/list-pizzas/list-pizzas.
 import { UpdatePizzaComponent } from './components/pizza/update-pizza/update-pizza.component';
 import { DeletePizzaComponent } from './components/pizza/delete-pizza/delete-pizza.component';
 import { GetDeliveryComponent } from './pages/get-delivery/get-delivery.component';
+import { OrderInfoComponent } from './components/order/order-info/order-info.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { GetDeliveryComponent } from './pages/get-delivery/get-delivery.componen
     ListPizzasComponent,
     UpdatePizzaComponent,
     DeletePizzaComponent,
-    GetDeliveryComponent
+    GetDeliveryComponent,
+    OrderInfoComponent
   ],
   imports: [
     BrowserModule,

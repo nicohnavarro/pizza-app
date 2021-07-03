@@ -1,0 +1,29 @@
+<div class="glass" *ngIf="delivery">
+  <div class="card">
+    <span *ngIf="delivery.canRecivedTips" class="badge badge-primary"
+      >Can recived Tips</span
+    >
+    <span *ngIf="!delivery.canRecivedTips" class="badge badge-danger"
+      >Not recived Tips</span
+    >
+    <div class="card-body">
+      <h5 class="card-title"><b>Delivery:</b> {{ delivery.name }}</h5>
+    </div>
+    <button type="button" class="btn btn-success">
+      Quantity to go
+      <span class="badge badge-light">{{ delivery.carryQuantity }}</span>
+    </button>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title active"><b>Pizzas:</b></h5>
+    <div class="">
+      <ul class="list-group" *ngIf="pizzas.length > 0">
+        <li class="list-group-item"*ngFor="let pizza of pizzas">
+          <span>{{pizza.name}}</span>
+          <span>💲{{pizza.price}}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <h5>Total:  💲{{total}}</h5>
+</div>

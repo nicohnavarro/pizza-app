@@ -1,5 +1,7 @@
 .row {
-  height: 90%;
+  h2{
+    margin: 0;
+  }
 }
 
 svg {
@@ -28,4 +30,49 @@ svg {
     #f5af19,
     #f12711
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.card{
+  margin-left: 1rem;
+}
+
+.card .face {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-height: 75%;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  transform-style: preserve-3d;
+  transition: 1s;
+  backface-visibility: hidden;
+}
+
+.card .face.back {
+    transform: rotateY(180deg);
+}
+
+// .selectedDelivery .face{
+//   position: relative;
+// }
+
+// .selectedDelivery .front{
+//   display: none;
+// }
+
+
+.selectedDelivery .face.front{
+  transform: rotateY(180deg);
+}
+
+.selectedDelivery .face.back{
+  transform: rotateY(360deg);
+  // background: rgba(255, 255, 255, 0.25);
+  // box-shadow: 0 8px 32px 0 rgba(166, 72, 29, 0.37);
+  // backdrop-filter: blur(5px);
+  // -webkit-backdrop-filter: blur(4px);
+  // border-radius: 10px;
+  // z-index: 100;
 }

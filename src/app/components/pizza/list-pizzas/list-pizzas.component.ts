@@ -17,18 +17,13 @@ export class ListPizzasComponent implements OnInit {
     new EventEmitter<Pizza>();
   @Output() pizzaSelectedAdd: EventEmitter<Pizza> =
     new EventEmitter<Pizza>();
-  pizzas: Pizza[] = [];
+  @Input() pizzas: Pizza[] = [];
 
   @ViewChildren(NgbdSortableHeader) headers:
     | QueryList<NgbdSortableHeader>
     | undefined;
 
-  constructor(private pizzaSvc: PizzaService) {
-    this.pizzaSvc.getPizzas().subscribe((data) => {
-      this.pizzas = data.filter(pizza => pizza.state !== pizzaState.DELETED);
-    });
-  }
-
+  constructor(){}
   ngOnInit(): void { }
   onSort(event: any) { }
 

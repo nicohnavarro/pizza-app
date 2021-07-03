@@ -1,3 +1,5 @@
+import { pizzaState } from './../../enums/pizzaState';
+import { PizzaService } from './../../services/pizza.service';
 import { Pizza } from './../../models/Pizza';
 import { Component, OnInit } from '@angular/core';
 import { Notyf } from 'notyf';
@@ -12,7 +14,14 @@ export class GetPizzasComponent implements OnInit {
   notyf = new Notyf();
   deletePizza:Pizza | undefined;
   editPizza:Pizza | undefined;
-  constructor() { }
+  pizzas:Pizza[]=[];
+
+  constructor(private pizzaSvc: PizzaService) {
+    this.pizzaSvc.getPizzas().subscribe((data) => {
+      this.pizzas = data.filter(pizza => pizza.state !== pizzaState.DELETED);
+    });
+  }
+
 
   ngOnInit(): void {
   }

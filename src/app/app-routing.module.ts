@@ -17,7 +17,7 @@ const routes: Routes = [
     {path:'createDelivery', component: CreateDeliveryComponent , canActivate:[AuthGuard]},
     {path:'detailsDelivery', component: DetailsDeliveryComponent ,canActivate:[AuthGuard]},
     {path:'getPizzas', component: GetPizzasComponent ,canActivate:[AdminGuard]},
-    {path:'getDelivery', component: GetDeliveryComponent ,canActivate:[AuthGuard]},
+    {path:'getDelivery', component: GetDeliveryComponent},
   ]},
   {path:'login', component: LoginComponent },
 ];
