@@ -6,10 +6,20 @@
   border-radius: 10px;
   z-index: 100;
   border: 1px solid rgba(255, 255, 255, 0.18);
-  padding:2rem;
-  width: 30%;
+  padding:1rem;
   margin: auto;
   margin-top: 20px;
+
+  .card-img-top{
+    max-width: 50%;
+    margin: auto;
+  }
+
+  .card-body{
+    margin: auto;
+    text-align: center;
+    justify-content: space-around;
+  }
 }
 
 .buttons{
