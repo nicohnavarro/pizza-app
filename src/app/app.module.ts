@@ -18,6 +18,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { GithubInfoComponent } from './components/github-info/github-info.component';
 import { NgBootstrapFormValidationModule } from 'ng-bootstrap-form-validation';
+import { ErrorComponent } from './pages/error/error.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { NgBootstrapFormValidationModule } from 'ng-bootstrap-form-validation';
     WelcomeComponent,
     GithubInfoComponent,
     NgbdSortableHeader,
+    ErrorComponent,
   ],
   imports: [
     BrowserModule,

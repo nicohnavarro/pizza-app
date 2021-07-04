@@ -1,0 +1,42 @@
+.btn {
+  background: #f12711; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #f5af19,
+    #f12711
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #f5af19,
+    #f12711
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border: none;
+}
+
+.container{
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  align-content: center;
+  height: 96vh;
+  img{
+    width: 800px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+.jumbotron {
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(166, 72, 29, 0.37);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  z-index: 100;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}

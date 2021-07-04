@@ -1,3 +1,4 @@
+import { ErrorComponent } from './pages/error/error.component';
 import { GetDeliveryComponent } from './pages/get-delivery/get-delivery.component';
 import { GetPizzasComponent } from './pages/get-pizzas/get-pizzas.component';
 import { DetailsDeliveryComponent } from './pages/details-delivery/details-delivery.component';
@@ -18,6 +19,7 @@ const routes: Routes = [
     {path:'getDelivery', loadChildren: () => import('./pages/get-delivery/get-delivery.module').then(m => m.GetDeliveryModule)},
   ]},
   {path:'login', loadChildren: () => import('./pages/login/login.module').then(m => m.LoginModule)},
+  {path:'**', component: ErrorComponent},
 ];
 
 @NgModule({
