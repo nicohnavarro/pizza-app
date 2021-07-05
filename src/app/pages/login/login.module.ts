@@ -7,11 +7,10 @@ import { CommonModule } from '@angular/common';
 @NgModule({
   declarations: [LoginComponent],
   imports: [
-    FormsModule,
-    ReactiveFormsModule,
     CommonModule,
     FormsModule,
-    LoginRoutingModule,                             
+    ReactiveFormsModule,
+    LoginRoutingModule,
   ]
 })
 export class LoginModule { }

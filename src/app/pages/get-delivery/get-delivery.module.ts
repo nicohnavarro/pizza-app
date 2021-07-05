@@ -7,14 +7,16 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @NgModule({
-  declarations: [GetDeliveryComponent,OrderInfoComponent],
+  declarations: [
+    GetDeliveryComponent,
+    OrderInfoComponent
+  ],
   imports: [
     FormsModule,
-    ReactiveFormsModule,
+    SharedModule,
     CommonModule,
-    FormsModule,
+    ReactiveFormsModule,
     GetDeliveryRoutingModule,                 
-    SharedModule       
   ]
 })
 export class GetDeliveryModule { }

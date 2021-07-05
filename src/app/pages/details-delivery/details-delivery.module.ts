@@ -9,16 +9,19 @@ import { CommonModule } from '@angular/common';
 import { NgbPaginationModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
-  declarations: [DetailsDeliveryComponent,DeliveryInfoComponent,CountryInfoComponent],
+  declarations: [
+    DetailsDeliveryComponent,
+    DeliveryInfoComponent,
+    CountryInfoComponent
+  ],
   imports: [
     FormsModule,
-    ReactiveFormsModule,
+    SharedModule,                     
     CommonModule,
-    FormsModule,
+    ReactiveFormsModule,
     DetailsDeliveryRoutingModule,   
     NgbPaginationModule,
     NgbModule, 
-    SharedModule                       
   ]
 })
 export class DetailsDeliveryModule { }

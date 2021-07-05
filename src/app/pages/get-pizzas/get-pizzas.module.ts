@@ -3,7 +3,6 @@ import { UpdatePizzaComponent } from './../../components/pizza/update-pizza/upda
 import { CreatePizzaComponent } from './../../components/pizza/create-pizza/create-pizza.component';
 import { GetPizzasRoutingModule } from './get-pizzas.routing.module';
 import { GetPizzasComponent } from './get-pizzas.component';
-import { ListPizzasComponent } from './../../components/pizza/list-pizzas/list-pizzas.component';
 import { SharedModule } from './../../shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
@@ -13,11 +12,10 @@ import { CommonModule } from '@angular/common';
   declarations: [GetPizzasComponent,CreatePizzaComponent,UpdatePizzaComponent,DeletePizzaComponent],
   imports: [
     FormsModule,
-    ReactiveFormsModule,
+    SharedModule,
     CommonModule,
-    FormsModule,
+    ReactiveFormsModule,
     GetPizzasRoutingModule,                 
-    SharedModule       
   ]
 })
 export class GetPizzasModule { }
